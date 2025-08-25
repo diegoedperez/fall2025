@@ -1,10 +1,10 @@
-# ECON 725: Computer Programming and Data Management in Economics (Summer 2025)
+# ECON 725: Computer Programming and Data Management in Economics (Fall 2025)
 
 | Instructor | [Marcelo Ortiz-Villavicencio](https://marcelortiz.com/) |
 |--------------|--------------------------------------------------------------|
 | Email | [marcelo.ortiz@emory.edu](mailto:marcelo.ortiz@emory.edu) |
 | Office Hours | See Canvas for info |
-| Meeting day/time | MWF 9:15-10:15am ONLINE |
+| Meeting day/time | MW 8:30-09:45am |
 
 
 ## Course description ##
@@ -64,7 +64,7 @@ Mini-Projects                |    40%     |
 * Part 4: Analytics Engineering and Data Visualization
   *	Big Data environments with Databricks and Spark
   *	Data Visualizations and reporting in Dashboards
-  *	Time Series Forecasting
+  *	Time Series Forecasting (Optional)
 
 
   
