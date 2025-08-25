@@ -47,7 +47,7 @@ Emory University
 </p>
 <br>
 <p align=center>
-Summer 2025
+Fall 2025
 </p>
 
 ---
@@ -78,7 +78,7 @@ name: prologue
 
 `r fa('envelope')` [marcelo.ortiz@emory.edu](mailto:marcelo.ortiz@emory.edu)
 
-`r fa('graduation-cap')` Third year PhD Student (econometrics, causal inference and machine learning)
+`r fa('graduation-cap')` Fourth year PhD Student (econometrics, causal inference and machine learning)
 
 --
 
@@ -101,7 +101,7 @@ Before graduate school, I hold positions in the private sector:
   - Name
   - Background
   - What do you expect to learn from this course?
-  - Any experience with programming or data management?
+  - Any experience with programming or data science?
 
 ---
 name: introduction
@@ -114,7 +114,7 @@ name: introduction
 - You will learn how to access and manipulate various types of datasets and will equip you with the skills to create fully reproducible data analysis pipelines. 
 - Upon completing this course, students will be able to acquire, organize, explore, and construct basic data science models to analyze economic data and present reports in a dashboard. 
 
-`r fa('globe')` [Course Github](https://github.com/DataSciEcon-Emory/summer2025)
+`r fa('globe')` [Course Github](https://github.com/DataSciEcon-Emory/fall2025)
 
 In this repo you will find all the materials that we cover in each class. Including slides, code, and datasets.
 
@@ -127,7 +127,7 @@ name: syllabus
 
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=1100px></html>
 
-Read the full document [here](https://canvas.emory.edu/courses/148217/assignments/syllabus)
+Read the full document [here](https://emory.instructure.com/courses/150302/assignments/syllabus)
 ---
 # Why this course?
 
@@ -198,21 +198,21 @@ name: getting-started
 # Set up Checklist
 
 - For this course, we are going to use most of the time cloud computing tools.
-- There are several options to choose from, but we are going to use [Github Codespaces](https://github.com/features/codespaces), [Databricks Community Edition](https://www.databricks.com/) and [Power BI](https://app.powerbi.com/groups/me/quickcreate?experience=power-bi)/[Tableau](https://www.tableau.com/academic/students).
+- There are several options to choose from, but we are going to use [Github Codespaces](https://github.com/features/codespaces), [Databricks Free Edition](https://www.databricks.com/learn/free-edition) and [Tableau](https://www.tableau.com/academic/students).
 - Before next class, I want you to go over the following checklist:
 
 ☑ Create a [Github](https://github.com/) account (This is your first in-class assessment. See Canvas.)
   - You will soon receive an invitation to the course organization on GitHub, as well as [GitHub classroom](https://classroom.github.com), which is how we'll disseminate and submit assignments, receive feedback, grading, etc. 
 
 ☑ Create a [Databricks](https://www.databricks.com/try-databricks#account) account and a [Datacamp](https://app.datacamp.com/) account with Emory email address.
-  - Check [Canvas](https://canvas.emory.edu/courses/148217/pages/join-datacamp-group) where you will find the link to the course and your first assignment 😊
+  - Check [Canvas](https://emory.instructure.com/courses/150302/modules/items/3237722) where you will find the link to the group and your first assignment 😊
 
 
 
 ---
 # Set up Checklist (cont.)
 
-☑ Get Access to [Github Education](https://education.github.com/discount_requests/application) benefits.
+☑ Get Access to [Github Education](https://github.com/education/students) benefits and [Microsoft Azure for Students](https://azure.microsoft.com/en-us/free/students)
 
 ☑ Download [VS Code](https://code.visualstudio.com/)
   - This is the integrated development environment (IDE) that we are going to use in this course.
