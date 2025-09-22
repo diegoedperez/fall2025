@@ -4,7 +4,7 @@
     <title>Lecture 3</title>
     <meta charset="utf-8" />
     <meta name="author" content="Marcelo Ortiz-Villavicencio" />
-    <script src="libs/header-attrs-2.29/header-attrs.js"></script>
+    <script src="libs/header-attrs-2.27/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
@@ -107,7 +107,7 @@ But here are some nice standalone Git GUIs that you might want to consider:
 
 # Checklist
 
-☑ Have you cloned the [course lecture repo](https://github.com/ECON725-EMORY/econ725-fall2024) to your local machine?
+☑ Have you forked and cloned the [course lecture repo](https://github.com/DataSciEcon-Emory/fall2025) to your local machine?
 
 ☑ Once that's done, pull to get the latest lecture slides.
 
@@ -442,7 +442,7 @@ The `man` command ("manual pages") is your friend if you ever need help.
 - Tip: Hit spacebar to scroll down a page at a time, "h" to see the help notes of the `man` command itself and "q" to quit.
 
 
-``` bash
+```bash
 man ls
 ```
 
@@ -1021,12 +1021,12 @@ Key navigation commands:
 - `cd` to change directory.
 
 
-``` bash
+```bash
 pwd
 ```
 
 ```
-## /Users/marcelortizv/Library/CloudStorage/OneDrive-Emory(2)/ECON 725 - Computer Programming and Data Management/ECON725-F2025/fall2025/03-shell
+## /Users/marcelortiz/Library/CloudStorage/OneDrive-Emory/ECON 725 - Computer Programming and Data Management/ECON725-F2025/fall2025/03-shell
 ```
 
 ---
@@ -1036,14 +1036,14 @@ pwd
 You can use absolute paths, but it's better to use relative paths and invoke special symbols for a user's home folder (`~`), current directory (`.`), and parent directory (`..`) as needed. 
 
 
-``` bash
+```bash
 cd examples ## Move into the "examples" sub-directory of this lecture directory.
 cd ../.. ## Now go back up two directories.
 pwd
 ```
 
 ```
-## /Users/marcelortizv/Library/CloudStorage/OneDrive-Emory(2)/ECON 725 - Computer Programming and Data Management/ECON725-F2025/fall2025
+## /Users/marcelortiz/Library/CloudStorage/OneDrive-Emory/ECON 725 - Computer Programming and Data Management/ECON725-F2025/fall2025
 ```
 
 
@@ -1084,20 +1084,20 @@ We're about to go into more depth about the `ls` command.
 - Navigate to the directory containing these lecture notes (i.e. `03-shell`). Now list the contents of the  `examples/` sub-directory with the `-lh` option ("long format", "human readable").
 
 
-``` bash
+```bash
 # cd PathWhereYouClonedThisRepo/lectures/03-shell ## change as needed
 ls -lh examples
 ```
 
 ```
 ## total 272
-## drwx------  3 marcelortizv  staff    96B Sep 14 21:23 ABC
-## -rwx------@ 1 marcelortizv  staff   149B Oct 16  2024 hello.R
-## -rwx------@ 1 marcelortizv  staff    73B Oct 16  2024 hello.sh
-## drwx------  9 marcelortizv  staff   288B Sep 14 21:24 meals
-## -rwx------@ 1 marcelortizv  staff    32B Oct 16  2024 nursery.txt
-## -rwx------@ 1 marcelortizv  staff   153B Oct 16  2024 reps.txt
-## -rwx------@ 1 marcelortizv  staff   117K Oct 16  2024 sonnets.txt
+## drwxr-xr-x@ 3 marcelortiz  staff    96B Sep 15 08:23 ABC
+## -rwxr-xr-x@ 1 marcelortiz  staff   149B Sep 15 08:23 hello.R
+## -rwxr-xr-x@ 1 marcelortiz  staff    73B Sep 15 08:23 hello.sh
+## drwxr-xr-x@ 9 marcelortiz  staff   288B Sep 15 08:23 meals
+## -rwxr-xr-x@ 1 marcelortiz  staff    32B Sep 15 08:23 nursery.txt
+## -rwxr-xr-x@ 1 marcelortiz  staff   153B Sep 15 08:23 reps.txt
+## -rwxr-xr-x@ 1 marcelortiz  staff   117K Sep 15 08:23 sonnets.txt
 ```
 
 ---
@@ -1220,13 +1220,13 @@ One of the most common shell tasks is object creation (files, directories, etc.)
 
 We use `mkdir` to create directories. E.g. To create a new "testing" directory:
 
-``` bash
+```bash
 mkdir testing
 ```
 
 We use `touch` to create (empty) files. E.g. To add some files to our new directory:
 
-``` bash
+```bash
 touch testing/test1.txt testing/test2.txt testing/test3.txt
 ```
 
@@ -1234,7 +1234,7 @@ touch testing/test1.txt testing/test2.txt testing/test3.txt
 
 Check that it worked:
 
-``` bash
+```bash
 ls testing
 ```
 
@@ -1252,13 +1252,13 @@ Let's delete the objects that we just created. Start with one of the .txt files,
 - We could delete all the files at the same time, but you'll see why I want to keep some.
 
 
-``` bash
+```bash
 rm testing/test1.txt
 ```
 
 The equivalent command for directories is `rmdir`.
 
-``` bash
+```bash
 rmdir testing
 ```
 
@@ -1272,7 +1272,7 @@ Uh oh... It won't let us delete the directory while it still has files inside of
 - Excluding the `-f` option is safer, but will trigger a confirmation prompt for every file, which I'd rather avoid here.
 
 
-``` bash
+```bash
 rm -rf testing ## Success
 ```
 
@@ -1285,7 +1285,7 @@ The syntax for copying is `$ cp object path/copyname`
 - However, if there is already an object with the same name in the target destination, then you'll have to use `-f` to force an overwrite.
 
 
-``` bash
+```bash
 ## Create new "copies" sub-directory
 mkdir examples/copies
 ## Now copy across a file (with a new name)
@@ -1311,13 +1311,13 @@ You can use `cp` to copy directories, although you'll need the `-r` (or `-R`) fl
 The syntax for moving is `$ mv object path/newobjectname` 
 
 
-``` bash
+```bash
  ## Move the abc.txt file and show that it worked
 mv examples/ABC/abc.txt examples
 ls examples/ABC ## empty
 ```
 
-``` bash
+```bash
 ## Move it back again
 mv examples/abc.txt examples/ABC
 ls examples/ABC ## not empty
@@ -1332,7 +1332,7 @@ ls examples/ABC ## not empty
 Note that "moving" an object within the same directory, but with the (newobjectname) option, is effectively the same as renaming it.
 
 
-``` bash
+```bash
  ## Rename reps-copy to reps2 by "moving" it with a new name
 mv examples/copies/reps-copy.txt examples/copies/reps2.txt
 ls examples/copies
@@ -1349,7 +1349,7 @@ ls examples/copies
 For example, say we want to change the file type (i.e. extension) of a particular file in the `examples/meals` directory.
 
 
-``` bash
+```bash
 mv examples/meals/monday.csv examples/meals/monday.TXT
 ls examples/meals
 ```
@@ -1374,7 +1374,7 @@ Where `mv` really shines, however, is in conjunction with regular expressions an
 For example, let's change _all_ of the file extensions in the `examples/meals` directory.
 
 
-``` bash
+```bash
 find examples/meals/ -name "*.csv" -exec bash -c 'mv "$0" "${0%.csv}.TXT"' {} \;
 ls examples/meals
 ```
@@ -1395,7 +1395,7 @@ ls examples/meals
 Better change them back before we continue. (Confirm that this worked for yourself.)
 
 
-``` bash
+```bash
 find examples/meals/ -name "*.TXT" -exec bash -c 'mv "$0" "${0%.TXT}.csv"' {} \;
 ls examples/meals
 ```
@@ -1418,7 +1418,7 @@ ls examples/meals
 1. Replace any number of characters with `*`. 
  - Convenient when you want to copy, move, or delete a whole class of files.
 
-``` bash
+```bash
   cp examples/*.sh examples/copies ## Copy any file with an .sh extension to "copies"
   rm examples/copies/* ## Delete everything in the "copies" directory
 ```
@@ -1426,7 +1426,7 @@ ls examples/meals
 2. Replace a single character with `?`
  - Convenient when you want to discriminate between similarly named files.
 
-``` bash
+```bash
   ls examples/meals/??nday.csv
   ls examples/meals/?onday.csv
 ```
@@ -1447,7 +1447,7 @@ The last command that I want to mention w.r.t. navigation is `find`.
 - This can be used to locate files and directories based on a variety of criteria; from pattern matching to object properties.
 
 
-``` bash
+```bash
 find examples -iname "monday.csv" ## will automatically do recursive
 ```
 
@@ -1455,7 +1455,7 @@ find examples -iname "monday.csv" ## will automatically do recursive
 ## examples/meals/monday.csv
 ```
 
-``` bash
+```bash
 find . -iname "*.txt" ## must use "." to indicate pwd
 ```
 
@@ -1466,7 +1466,7 @@ find . -iname "*.txt" ## must use "." to indicate pwd
 ## ./examples/nursery.txt
 ```
 
-``` bash
+```bash
 find . -size +100k ## find files larger than 100 KB
 ```
 
@@ -1506,7 +1506,7 @@ You can use the `wc` command to count: 1) lines of text, 2) the number of words,
 Let's demonstrate with a text file containing all of Shakespeare's Sonnets.&lt;sup&gt;1&lt;/sup&gt;
 
 
-``` bash
+```bash
 wc examples/sonnets.txt
 ```
 
@@ -1538,7 +1538,7 @@ Again, let's demonstrate using Shakespeare's Sonnets. (This will overflow the sl
 # Reading text (cont.)
 
 
-``` bash
+```bash
 cat -n examples/sonnets.txt
 ```
 
@@ -4593,7 +4593,7 @@ The `more` and `less` commands provide extra functionality over `cat`. For examp
 The `head` and `tail` commands let you limit yourself to a preview of the text, down to a specified number of rows. (The default is 10 rows if you don't specify a number.)
 
 
-``` bash
+```bash
 head -n 3 examples/sonnets.txt ## First 3 rows
 # head examples/sonnets.txt ## First 10 rows (default)
 ```
@@ -4613,7 +4613,7 @@ head -n 3 examples/sonnets.txt ## First 3 rows
 `tail` works very similarly to `head`, but starting from the bottom. For example, we can see the very last row of a file as follows
 
 
-``` bash
+```bash
 tail -n 1 examples/sonnets.txt ## Last row
 ```
 
@@ -4628,7 +4628,7 @@ tail -n 1 examples/sonnets.txt ## Last row
 However, there's one other neat option that I want to show you. By using the `-n +N` option, we can specify that we want to preview all lines starting from row N *and after*. E.g.
 
 
-``` bash
+```bash
 tail -n +3024 examples/sonnets.txt ## Show everything from line 3024
 ```
 
@@ -4651,7 +4651,7 @@ For example, say we want to find the famous opening line to Shakespeare's [Sonne
 - I'm going to include the `-n` ("number") flag to get the line that it occurs on. 
 
 
-``` bash
+```bash
 grep -n "Shall I compare thee" examples/sonnets.txt
 ```
 
@@ -4677,7 +4677,7 @@ Here's a simple example: Which days will I eat pasta this week?
  - I'm using the `R` (recursive) and `l` (just list the files; don't print the output) flags.
 
 
-``` bash
+```bash
 grep -Rl "pasta" examples/meals
 ```
 
@@ -4696,7 +4696,7 @@ What about muesli? And pizza?
 We can remove duplicate lines in various ways in Bash, but I'll demonstrate using `sort`.
 
 
-``` bash
+```bash
 cat examples/reps.txt
 ```
 
@@ -4717,7 +4717,7 @@ There's a fair bit of repetition in this file (and a double entendre). Let's fix
 - Note the use of the `-u` ("unique") flag to remove duplicates. I'll also add a `-r` ("reverse") flag, but only because `sort` orders alphabetically and this makes less sense for this simple example.
 
 
-``` bash
+```bash
 sort -ur examples/reps.txt
 ```
 
@@ -4744,7 +4744,7 @@ You can send output from the shell to a file using the redirect operator `&gt;`
 For example, let's print a message to the shell using the `echo` command.
 
 
-``` bash
+```bash
 echo "At first, I was afraid, I was petrified"
 ```
 
@@ -4757,7 +4757,7 @@ echo "At first, I was afraid, I was petrified"
 If you wanted to save this output to a file, you need simply redirect it to the filename of choice.
 
 
-``` bash
+```bash
 echo "At first, I was afraid, I was petrified" &gt; survive.txt
 find survive.txt ## Show that it now exists
 ```
@@ -4774,7 +4774,7 @@ If you want to *append* text to an existing file, then you should use `&gt;&gt;`
 - Using `&gt;` will try to overwrite the existing file contents.
 
 
-``` bash
+```bash
 echo "'Kept thinking I could never live without you by my side" &gt;&gt; survive.txt
 cat survive.txt
 ```
@@ -4804,7 +4804,7 @@ The pipe operator `|` is one of the coolest features in Bash.
 Let me demonstrate using a very simple example.
 
 
-``` bash
+```bash
 cat -n examples/sonnets.txt | head -n100 | tail -n10
 ```
 
@@ -4832,7 +4832,7 @@ An exercise: Say I want to pull out all of text from (but limited to) Sonnet 18.
 --
 
 
-``` bash
+```bash
 tail -n +336 examples/sonnets.txt | head -n14
 ```
 
@@ -4909,7 +4909,7 @@ I find the top approach more readable, but I may use single line approach in the
 To help make things concrete, here's a simple _for_ loop in action.
 
 
-``` bash
+```bash
 for i in 1 2 3 4 5; do echo $i; done
 ```
 
@@ -4926,7 +4926,7 @@ for i in 1 2 3 4 5; do echo $i; done
 FWIW, we can use bash's brace expansion (`{1..n}`) to save us from having to write out a long sequence of numbers.
 
 
-``` bash
+```bash
 for i in {1..5}; do echo $i; done
 ```
 
@@ -4974,7 +4974,7 @@ Did it work? (See next slide.)
 # Example 2: Combine CSVs (cont.)
 
 
-``` bash
+```bash
 cat examples/meals/mealplan.csv
 ```
 
@@ -5010,7 +5010,7 @@ Can you think of a way?
 
 Let's try again. First delete the old file so we can start afresh.
 
-``` bash
+```bash
 rm -f examples/meals/mealplan.csv ## delete old file
 ```
 
@@ -5040,7 +5040,7 @@ $ for i in $(ls examples/meals/*day.csv)
 It worked!
 
 
-``` bash
+```bash
 cat examples/meals/mealplan.csv
 ```
 
@@ -5086,7 +5086,7 @@ However, it's also possible (and often desirable) to write reproducible shell sc
 Let's look at the contents of a short shell script that I've included in the examples folder.
 
 
-``` bash
+```bash
 cat examples/hello.sh
 ```
 
@@ -5140,7 +5140,7 @@ echo -e "\nHello World!\n"
 To run this simple script, you can just type in the file name and press enter.
 
 
-``` bash
+```bash
 examples/hello.sh
 # bash examples/hello.sh ## Also works
 ```
@@ -5284,10 +5284,10 @@ class: center, middle, thank-you-slide
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
-  "highlightStyle": "github",
-  "highlightLines": true,
-  "countIncrementalSlides": false,
-  "ratio": "16:9"
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
