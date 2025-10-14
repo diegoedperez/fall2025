@@ -7697,7 +7697,7 @@ If you simply need to extract data from downloaded HTML content, <code>Beautiful
 <h3 id="Getting-Started-with-MechanicalSoup">Getting Started with MechanicalSoup<a class="anchor-link" href="#Getting-Started-with-MechanicalSoup">¶</a></h3><br/>
 <center>
 <div>
-<img alt="No description has been provided for this image" src="https://raw.githack.com/ECON725-EMORY/econ725-fall2024/main/images/mechanical_soup.png" width="400"/>
+<img alt="No description has been provided for this image" src="https://raw.githack.com/DataSciEcon-Emory/fall2025/main/images/mechanical_soup.png" width="400"/>
 </div>
 </center>
 <p>This topic material is based on the <a href="https://www.scrapingbee.com/blog/getting-started-with-mechanicalsoup/">scrapingbee.com</a> blog and adapted for our purposes in the course.</p>
@@ -7724,7 +7724,7 @@ If you simply need to extract data from downloaded HTML content, <code>Beautiful
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Connect to the website</span>
@@ -7740,7 +7740,7 @@ If you simply need to extract data from downloaded HTML content, <code>Beautiful
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>&lt;Response [200]&gt;</pre>
 </div>
@@ -7756,7 +7756,7 @@ If you simply need to extract data from downloaded HTML content, <code>Beautiful
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h5 id="Extracting-the-title">Extracting the title<a class="anchor-link" href="#Extracting-the-title">¶</a></h5><p>To extract the title, you first need to understand the structure of the Wikipedia page. Open the page in Google Chrome and press <code>F12</code> to open the developer tools. In the <code>Elements</code> tab, look for the HTML tag for the title of the page. Here's what it will look like:</p>
 <div>
-<img alt="No description has been provided for this image" src="https://www.scrapingbee.com/blog/getting-started-with-mechanicalsoup/page-title-html_hu929c9a2b4249905d5d24bb430548fc39_226427_1200x0_resize_catmullrom_3.png" width="600"/>
+<img alt="No description has been provided for this image" src="https://www.scrapingbee.com/blog/getting-started-with-mechanicalsoup/page-title-html_hu17009774656312328514.png" width="600"/>
 </div>
 <p>To get the title from the page, look for a <code>span</code> tag that has the class <code>mw-page-title-main</code></p>
 </div>
@@ -7767,7 +7767,7 @@ If you simply need to extract data from downloaded HTML content, <code>Beautiful
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="n">browser</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">select_one</span><span class="p">(</span><span class="s1">'span.mw-page-title-main'</span><span class="p">)</span>
@@ -7799,11 +7799,11 @@ If you simply need to extract data from downloaded HTML content, <code>Beautiful
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h4 id="Extracting-the-reference-links">Extracting the reference links<a class="anchor-link" href="#Extracting-the-reference-links">¶</a></h4><p>Next, you'll find and extract all the links from the references section of the web page. First, take a quick peek at the HTML structure of the References section by inspecting it with your browser's developer tools:</p>
 <div>
-<img alt="No description has been provided for this image" src="https://www.scrapingbee.com/blog/getting-started-with-mechanicalsoup/references-structure_hud0b332475e777514f36963071ecd4054_403711_1500x0_resize_catmullrom_3.png" width="1000"/>
+<img alt="No description has been provided for this image" src="https://www.scrapingbee.com/blog/getting-started-with-mechanicalsoup/references-structure_hu4756474786081050296.png" width="1000"/>
 </div>
 <p>First, select the ordered list (<code>ol</code>) tag that has the class references. With that tag selected, you can consider using the method <code>find_all</code> method to extract all links inside this <code>ol</code> tag. However, on a closer look, you'll find that this section also contains backlinks to places in the same Wikipedia page where each reference was cited:</p>
 <div>
-<img alt="No description has been provided for this image" src="https://www.scrapingbee.com/blog/getting-started-with-mechanicalsoup/backlinks_hud0b332475e777514f36963071ecd4054_412040_1500x0_resize_catmullrom_3.png" width="1000"/>
+<img alt="No description has been provided for this image" src="https://www.scrapingbee.com/blog/getting-started-with-mechanicalsoup/backlinks_hu8625713131764143085.png" width="1000"/>
 </div>
 <p>If you extract all links from this tag using the <code>find_all</code> function, the results will contain same-page backlinks too, which you don't need. To avoid that, you need to select all <code>reference-text</code> span tags and extract the links from them.</p>
 </div>
@@ -7814,7 +7814,7 @@ If you simply need to extract data from downloaded HTML content, <code>Beautiful
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Select the **References section**</span>
@@ -7971,7 +7971,7 @@ https://s3.us-west-2.amazonaws.com/research-papers-mynk/Breaking-Fraud-And-Bot-D
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sandbox_nav_link</span> <span class="o">=</span> <span class="n">browser</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">select_one</span><span class="p">(</span><span class="s1">'li#nav-sandbox'</span><span class="p">)</span>
@@ -8008,7 +8008,7 @@ https://s3.us-west-2.amazonaws.com/research-papers-mynk/Breaking-Fraud-And-Bot-D
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Next, locate and follow the <strong>Hockey Teams: Forms, Searching and Pagination</strong> link. If you inspect the HTML structure around this element, you'll notice that each link on this page is inside <code>&lt;div class="page"&gt;</code> tags.</p>
 <div>
-<img alt="No description has been provided for this image" src="https://www.scrapingbee.com/blog/getting-started-with-mechanicalsoup/inspect-sandbox-page_huff8e726660b72a3ae9da3d7a109ac6f7_854732_1500x0_resize_catmullrom_3.png" width="1000"/>
+<img alt="No description has been provided for this image" src="https://www.scrapingbee.com/blog/getting-started-with-mechanicalsoup/inspect-sandbox-page_hu8403476182413272040.png" width="1000"/>
 </div>
 </div>
 </div>
@@ -8029,7 +8029,7 @@ https://s3.us-west-2.amazonaws.com/research-papers-mynk/Breaking-Fraud-And-Bot-D
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sandbox_list_items</span> <span class="o">=</span> <span class="n">browser</span><span class="o">.</span><span class="n">page</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">'div.page'</span><span class="p">)</span>
@@ -8075,7 +8075,7 @@ https://s3.us-west-2.amazonaws.com/research-papers-mynk/Breaking-Fraud-And-Bot-D
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">navigate</span><span class="p">():</span>
@@ -8110,7 +8110,7 @@ https://s3.us-west-2.amazonaws.com/research-papers-mynk/Breaking-Fraud-And-Bot-D
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">navigate</span><span class="p">()</span>
@@ -8153,7 +8153,7 @@ https://www.scrapethissite.com/pages/forms/
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
@@ -8215,7 +8215,7 @@ https://www.scrapethissite.com/pages/forms/
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">handle_form</span><span class="p">():</span>
@@ -8236,7 +8236,7 @@ https://www.scrapethissite.com/pages/forms/
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">handle_form</span><span class="p">()</span>
@@ -8252,10 +8252,10 @@ https://www.scrapethissite.com/pages/forms/
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Handling-Pagination">Handling Pagination<a class="anchor-link" href="#Handling-Pagination">¶</a></h3><p>MechanicalSoup doesn't offer any special methods for handling navigation. You have to select the appropriate link from the pagination element and follow it via your browser object to navigate to the desired page.</p>
+<h3 id="Handling-Pagination">Handling Pagination<a class="anchor-link" href="#Handling-Pagination">¶</a></h3><p>MechanicalSoup doesn't offer any special methods for handling paginations. You have to select the appropriate link from the pagination element and follow it via your browser object to navigate to the desired page.</p>
 <p>Here's what the HTML structure of the pagination element looks like:</p>
 <div>
-<img alt="No description has been provided for this image" src="https://www.scrapingbee.com/blog/getting-started-with-mechanicalsoup/pagination-links-html-structure_hu2bf0938aecae8df0dd60999bb2ae106e_79616_825x0_resize_catmullrom_3.png" width="1000"/>
+<img alt="No description has been provided for this image" src="https://www.scrapingbee.com/blog/getting-started-with-mechanicalsoup/pagination-links-html-structure_hu9569013241349928453.png" width="1000"/>
 </div>
 </div>
 </div>
@@ -8305,7 +8305,7 @@ https://www.scrapethissite.com/pages/forms/
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">handle_pagination</span><span class="p">()</span>
